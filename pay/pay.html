@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="H5UI">
+    <meta name="description" content="H5UI-简洁优雅的移动UI组件库">
+
+    <title>交易历史</title>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- H5UI CSS -->
+    <link rel="stylesheet" href="css/h5ui.css">
+
+    <style>
+    body,html{
+        background: url('./img/sign-bg.png');
+        background-size:100% 100%; 
+        margin: 0;
+        padding: 0;
+        font: 14px/1.5 arial;
+        height:100%;
+    }
+    .h5ui-bar{
+        background: #2C2B31; 
+    }
+    .h5ui-bar .h5ui-bar_title{
+        color: #fff;
+    }
+
+    /*footer*/
+    .h5ui-bar-footer{
+        font-size: 14px;
+        padding:2px 0;
+    }
+    .h5ui-bar-footer .h5ui-bar_item{
+    }
+
+    /*page*/
+    .h5ui-page{
+        margin-top: 40px;
+    }
+    .h5ui-tab .tab-item{
+        background: #282828;
+    }
+    .h5ui-tab .tab-item li a{
+        width: 100%;
+    }
+    .tab-content{
+        /*background: #ccc;*/
+    }
+    .tab-content .tab-pane p{
+        color: #fff;
+        text-align: center;
+        
+    }
+    </style>
+
+</head>
+<body ontouchstart>
+
+    
+    <!-- start [top-bar] -->
+    <header class="h5ui-bar">
+        <!-- <a class="h5ui-bar_item pull-left" href="../index.html"><i class="h5ui-bar_arrow_left"></i>返回</a> -->
+        <h1 class="h5ui-bar_title"> 交易历史 </h1>
+    </header>
+    <!-- end [top-bar] -->
+
+
+    <!-- page -->
+    <div class="h5ui-page">
+        <div class="h5ui-grid clearfix">
+
+            <!-- start [top-bar] -->
+
+            <!-- start [tab] -->
+            <div class="h5ui-tab">
+                <ul class="tab-item">
+                    <li class="active">
+                        <a href="#tab-1">持仓明细</a>
+                    </li>
+                    <li>
+                        <a href="#tab-2">历史明细</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <p>标签一</p>
+                    <div class="list-main">
+                        
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane">
+                    <p>标签二</p>
+                </div>
+            </div>
+            <!-- end [tab] -->
+
+
+            <!-- end [top-bar] -->
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- start [bar-tab] -->
+    <footer class="h5ui-bar bar-fixed h5ui-bar-footer">
+        <a href="" class="h5ui-bar_item active">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark-green.png" width="100%"></i>
+            <span>商品行情</span>
+        </a>
+        <a href="" class="h5ui-bar_item">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"><span class="h5ui-badge h5ui-badge_dot"></span></i>
+            <span>交易记录</span>
+        </a>
+
+        <a href="" class="h5ui-bar_item">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"><span class="h5ui-badge">8</span></i>
+            <span>个人中心</span>
+        </a>
+    </footer>
+    <!-- end [bar-tab] -->
+
+
+
+</body>
+</html>
+<!-- jQuery -->
+<script src="./js/jquery.min.js"></script>
+<!-- H5UI JS -->
+<script src="./js/h5ui.min.js"></script>

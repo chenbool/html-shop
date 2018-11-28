@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IM</title>
+
+	<style>
+		.chat{
+			z-index: 201809021;
+		    width: 260px;
+		    height: 580px;
+		    background-image: url(http://im.bigzhl.com/static/common/layui/css/modules/layim/skin/2.jpg);
+		    border: 1px solid #D9D9D9;
+		    border-color: rgba(0,0,0,.05);
+		    background-repeat: no-repeat;
+		    background-color: #F6F6F6;
+		    color: #333;
+		    position: fixed;
+		    bottom: 0;
+		   	right: 1px;
+		   	font-family: 12px/1.5 arial;
+		}
+		.chat-title{
+			height: 90px;
+		}
+
+		/*close*/
+		.chat-close{
+			width: 100%;
+			height:18px;
+		}
+		.chat-close img{
+			width:12px;
+			height: 12px;
+			float: right;
+			padding: 5px 8px;
+			cursor: pointer;
+			transition:background .8s;
+			-moz-transition:background .8s; /* Firefox 4 */
+			-webkit-transition:background .8s; /* Safari and Chrome */
+			-o-transition:background .8s; /* Opera */
+		}
+		.chat-close .chat-close-img:hover{
+			background: #FB6155;
+		}
+		.chat-close img:hover{
+			background: rgba(0,0,0,.09);
+		}
+
+		/*logo*/
+		.chat-title .chat-logo{
+			padding: 0 10px;
+			width:25%;
+			float: left;
+		}
+		.chat-title .chat-logo img{
+			width: 60px;
+			height: 60px;
+			border: 2px solid #D9D9D9;
+			cursor: pointer;
+		}
+		.chat-title .chat-logo img:hover{
+			border: 2px solid #ccc;
+		}
+		/*info*/
+		.chat .chat-info{
+			float: left;
+			width:57%;
+		}
+		.chat .chat-info .chat-name{
+			padding: 3px;
+			font-size:14px;
+			font-weight: bold;
+			color: #000;
+		}
+		.chat .chat-info .chat-desc{
+			padding: 3px;
+			font-size:12px;
+			color: #000;
+			border:none;	
+			border:1px solid rgba(0,0,0,0);
+		}
+		.chat .chat-info .chat-desc:hover{
+			border: 1px solid #ccc;
+		}
+		
+		/*search*/
+		.chat-search{
+			width: 100%;
+			height: 25px;
+			padding:0 1px;
+		}
+		.chat-search input{
+			width: 98.8%;
+			height: 21px;
+			border:1px solid rgba(0,0,0,.10);
+			background: rgba(0,0,0,.02);
+			font-size: 14px;
+			padding:0 5px;
+		}
+
+
+
+		/*main*/
+		.chat-main{
+			height: 410px;
+			background: #F0F3F6;
+			opacity: 0.85;
+		}
+		/*header*/
+		.chat-main .chat-main-header{
+			border-bottom: 3px solid #CCCFD3;
+			height: 30px;
+		}
+		.chat-main .chat-main-header-item{
+			width:32%;
+			height: 31px;
+			float: left;
+			text-align: center;
+			cursor: pointer;
+		}
+		.chat-main .chat-main-header .current{
+			border-bottom:1.5px solid #566A81; 
+		}
+		.chat-main .chat-main-header .current img{
+			fill: #566A81;
+		}
+		.chat-main .chat-main-header img{
+			color:#ccc;
+			width: 20px;
+			height: 20px;
+			float: left;
+			padding: 5px 35px;
+			cursor: pointer;
+		}
+		/*list*/
+		.chat-main .chat-main-list{
+			overflow-y:scroll;
+			overflow-x:hidden;
+			height: 390px;
+		}
+		.chat-main .chat-main-list ul{
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			padding-top: 5px;
+		}
+		.chat-main .chat-main-list ul li{
+			list-style: none;
+			width: 100%;
+			padding:5px 10px;
+			height: 40px;
+		}
+		.chat-main .chat-main-list ul li:hover{
+			/*background: #CCCED0;*/
+			background: rgba(204,206,208,0.4);
+		}
+
+		.chat-main .chat-main-list li img{
+			width: 35px;
+			height: 35px;
+			border-radius: 100%;
+			border:1px solid rgba(0,0,0,.2);
+			float: left;
+		}
+		.chat-main .chat-main-list-date{
+			font-size: 10px;
+			float: right;
+			margin-right: 12px;
+		}
+		.chat-main .chat-main-list-title{
+			font-size: 12px;
+			font-weight: bold;
+			float: left;
+			padding:0 10px;
+			width: 60%;
+			color: #000;
+		}
+		.chat-main .chat-main-list-content{
+			font-size: 10px;
+			/*margin-top:10px;*/
+			float: right;
+			width: 81%;
+			padding:2px 0;
+		}
+	</style>
+
+</head>
+<body>
+
+	<!-- chat -->
+	<div class="chat" id="chat-box">
+		<div class="chat-title">
+			<!-- close -->
+			<div class="chat-close"> 
+				<img src="./img/close.svg"  class="chat-close-img" alt=""> 
+				<img src="./img/min.svg" alt=""> 
+				<img src="./img/skin.svg" alt=""> 
+			</div>
+
+			<!-- login -->
+			<div class="chat-logo">
+				<img src="http://q1.qlogo.cn/g?b=qq&nk=30024167&s=140&t=1368862220" alt="" >
+			</div>
+			<!-- info -->
+			<div class="chat-info">
+				<div class="chat-name">游客</div>
+				<div class="chat-desc">php是最好的编程语言</div>
+			</div>
+		</div>
+		
+		<!-- search -->
+		<div class="chat-search">
+			<input type="text" name="keywords" id="chat-keywords">
+		</div>
+		
+		<!-- main -->
+		<div class="chat-main">
+
+			<!-- header -->
+			<div class="chat-main-header">
+				<div class="chat-main-header-item" :class="{current:current_header==1}" @click="current_header=1" >
+					<img src="./img/chat.svg" alt="会话">
+				</div>
+				<div class="chat-main-header-item " :class="{current:current_header==2}" @click="current_header=2" >
+					<img src="./img/contact.svg" alt="联系人">
+				</div>
+				<div class="chat-main-header-item">
+					<img src="./img/group.svg" alt="群组" :class="{current:current_header==3}" @click="current_header=3">
+				</div>				
+			</div>
+
+			<!-- list -->
+			<div class="chat-main-list">
+				<ul>
+					<!-- 会话消息列表 -->
+					<li v-for="(item,index) in chat_box">
+						<img :src="item.logo" :alt="item.nickname">
+						<span class="chat-main-list-title" v-text="item.nickname"> -- </span>
+						<span class="chat-main-list-date" v-text="item.fromtime"> -- </span>
+						<div class="chat-main-list-content" v-text="item.content"> -- </div>
+					</li>
+				</ul>				
+			</div>
+
+		</div>
+		
+		<!-- footer -->
+		<div class="chat-footer">
+		</div>
+	</div>
+
+
+</body>
+</html>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+var app = new Vue({
+  el: '#chat-box',
+  data: {
+  	current_header: 1,
+    chat_box: [
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=30024167&s=140&t=1368862220",
+    		nickname: "bool",
+    		fromtime: "9-21",
+    		content: '你好!'
+    	},
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=81001985&s=140&t=1368862220",
+    		nickname: "console.log",
+    		fromtime: "9-21",
+    		content: '测试!'
+    	},
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=498734244&s=140&t=1368862220",
+    		nickname: "幸福的小海豚",
+    		fromtime: "9-21",
+    		content: '测试!'
+    	},
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=350510858&s=140&t=1368862220",
+    		nickname: "守望明天",
+    		fromtime: "9-21",
+    		content: '守望明天!'
+    	},    	
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=100890610&s=140&t=1368862220",
+    		nickname: "广州-Ctrl+V",
+    		fromtime: "9-21",
+    		content: '广州-Ctrl+V!'
+    	},
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=78669365&s=140&t=1368862220",
+    		nickname: "Kinn",
+    		fromtime: "9-21",
+    		content: '78669365'
+    	},
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=398123186&s=140&t=1368862220",
+    		nickname: "she tell me must win",
+    		fromtime: "9-21",
+    		content: '78669365'
+    	},    	
+    	{
+    		logo: "http://q1.qlogo.cn/g?b=qq&nk=913512417&s=140&t=1368862220",
+    		nickname: "Victor  big god",
+    		fromtime: "9-21",
+    		content: 'Victor  big god'
+    	},
+
+    ],
+
+  }
+})
+</script>

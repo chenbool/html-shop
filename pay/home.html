@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="H5UI">
+    <meta name="description" content="H5UI-简洁优雅的移动UI组件库">
+
+    <title>首页</title>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- H5UI CSS -->
+    <link rel="stylesheet" href="css/h5ui.css">
+
+    <style>
+    body,html{
+        background: url('./img/sign-bg.png');
+        background-size:100% 100%; 
+        margin: 0;
+        padding: 0;
+        font: 14px/1.5 arial;
+        height:100%;
+    }
+    .h5ui-bar{
+        background: #2C2B31; 
+    }
+    .h5ui-bar .h5ui-bar_title{
+        color: #fff;
+    }
+
+    /*footer*/
+    .h5ui-bar-footer{
+        font-size: 14px;
+        padding:2px 0;
+    }
+    .h5ui-bar-footer .h5ui-bar_item{
+    }
+
+    /*page*/
+    .h5ui-page{
+        margin-top: 40px;
+    }
+
+    .h5ui-page .h5ui-list{
+        background: #11141D;
+        color: #999999;
+        font-size:14px;
+        font-weight: none;
+        border: none;
+        text-align: center;
+        border-bottom: 1px solid #171B23;
+        /*border-bottom: 1px solid rgba(84,86,87,0.1);*/
+    }
+    .h5ui-group .list-header {
+        background: #262834;
+        border: none;
+    }
+
+    .h5ui-list:before,
+    .h5ui-list:last-child:before{
+        border: none;
+    }
+    .h5ui-group .high{
+        color: #1CBE52;
+    }  
+    .h5ui-group .high .trend div{
+        background: url('./img/high.png') no-repeat;
+        width: 16px;
+        height: 16px;
+        margin: 1px auto;
+    }  
+    .h5ui-group .low{
+        color: #F6293B;
+    }
+    .h5ui-group .low .trend div{
+        background: url('./img/low.png') no-repeat;
+        width: 16px;
+        height: 16px;
+        margin: 1px auto;
+    }  
+    .h5ui-list .trend div{
+        background: url('./img/keep.png') no-repeat;
+        width: 16px;
+        height: 16px;
+        margin: 1px auto;  
+    }
+    </style>
+
+</head>
+<body ontouchstart>
+
+    
+    <!-- start [top-bar] -->
+    <header class="h5ui-bar">
+        <!-- <a class="h5ui-bar_item pull-left" href="../index.html"><i class="h5ui-bar_arrow_left"></i>返回</a> -->
+        <h1 class="h5ui-bar_title"> 商品行情 </h1>
+    </header>
+    <!-- end [top-bar] -->
+
+
+    <!-- page -->
+    <div class="h5ui-page">
+        <div class="h5ui-grid clearfix">
+
+            <!-- start [top-bar] -->
+
+            <!-- start [lists] -->
+            <div class="h5ui-group">
+
+                <div class="h5ui-list list-header">
+                    <div class="h5ui-list_bd">商品名称</div>
+                    <div class="h5ui-list_bd">现价</div>
+                    <div class="h5ui-list_bd">最低</div>
+                    <div class="h5ui-list_bd">走势</div>
+                    <div class="h5ui-list_bd">最高</div>
+                </div>
+                
+                <div class="h5ui-list high">
+                    <div class="h5ui-list_bd">黄金</div>
+                    <div class="h5ui-list_bd">1.0</div>
+                    <div class="h5ui-list_bd">0.8</div>
+                    <div class="h5ui-list_bd trend"> <div></div> </div>
+                    <div class="h5ui-list_bd">1.2</div>
+                </div>
+
+                <div class="h5ui-list low">
+                    <div class="h5ui-list_bd">白银</div>
+                    <div class="h5ui-list_bd">1.0</div>
+                    <div class="h5ui-list_bd">0.8</div>
+                    <div class="h5ui-list_bd trend"> <div></div> </div>
+                    <div class="h5ui-list_bd">1.2</div>
+                </div>
+
+                <div class="h5ui-list">
+                    <div class="h5ui-list_bd">青铜</div>
+                    <div class="h5ui-list_bd">1.0</div>
+                    <div class="h5ui-list_bd">0.8</div>
+                    <div class="h5ui-list_bd trend"> <div></div> </div>
+                    <div class="h5ui-list_bd">1.2</div>
+                </div>
+
+                <div class="h5ui-list low">
+                    <div class="h5ui-list_bd">钻石</div>
+                    <div class="h5ui-list_bd">1.0</div>
+                    <div class="h5ui-list_bd">0.8</div>
+                    <div class="h5ui-list_bd trend"> <div></div> </div>
+                    <div class="h5ui-list_bd">1.2</div>
+                </div>     
+
+                <div class="h5ui-list high">
+                    <div class="h5ui-list_bd">精钢</div>
+                    <div class="h5ui-list_bd">1.0</div>
+                    <div class="h5ui-list_bd">0.8</div>
+                    <div class="h5ui-list_bd trend"> <div></div> </div>
+                    <div class="h5ui-list_bd">1.2</div>
+                </div>
+
+                <div class="h5ui-list high">
+                    <div class="h5ui-list_bd">玄铁</div>
+                    <div class="h5ui-list_bd">1.0</div>
+                    <div class="h5ui-list_bd">0.8</div>
+                    <div class="h5ui-list_bd trend"> <div></div> </div>
+                    <div class="h5ui-list_bd">1.2</div>
+                </div>
+
+            </div>
+            <!-- end [lists] -->
+
+            <!-- end [top-bar] -->
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- start [bar-tab] -->
+    <footer class="h5ui-bar bar-fixed h5ui-bar-footer">
+        <a href="" class="h5ui-bar_item active">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark-green.png" width="100%"></i>
+            <span>商品行情</span>
+        </a>
+        <a href="" class="h5ui-bar_item">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"><span class="h5ui-badge h5ui-badge_dot"></span></i>
+            <span>交易记录</span>
+        </a>
+<!-- 
+        <a href="" class="h5ui-bar_item">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"></i>
+            <span>在线聊天</span>
+        </a>
+
+ -->
+        <a href="" class="h5ui-bar_item">
+            <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"><span class="h5ui-badge">8</span></i>
+            <span>个人中心</span>
+        </a>
+    </footer>
+    <!-- end [bar-tab] -->
+
+
+
+</body>
+</html>

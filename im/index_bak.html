@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IM</title>
+
+	<style>
+		.chat{
+			z-index: 201809021;
+		    width: 260px;
+		    height: 580px;
+		    background-image: url(http://im.bigzhl.com/static/common/layui/css/modules/layim/skin/2.jpg);
+		    border: 1px solid #D9D9D9;
+		    border-color: rgba(0,0,0,.05);
+		    background-repeat: no-repeat;
+		    background-color: #F6F6F6;
+		    color: #333;
+		    position: fixed;
+		    bottom: 0;
+		   	right: 1px;
+		   	font-family: 12px/1.5 arial;
+		}
+		.chat-title{
+			height: 90px;
+		}
+
+		/*close*/
+		.chat-close{
+			width: 100%;
+			height:18px;
+		}
+		.chat-close img{
+			width:12px;
+			height: 12px;
+			float: right;
+			padding: 5px 8px;
+			cursor: pointer;
+			transition:background .8s;
+			-moz-transition:background .8s; /* Firefox 4 */
+			-webkit-transition:background .8s; /* Safari and Chrome */
+			-o-transition:background .8s; /* Opera */
+		}
+		.chat-close .chat-close-img:hover{
+			background: #FB6155;
+		}
+		.chat-close img:hover{
+			background: rgba(0,0,0,.09);
+		}
+
+		/*logo*/
+		.chat-title .chat-logo{
+			padding: 0 10px;
+			width:25%;
+			float: left;
+		}
+		.chat-title .chat-logo img{
+			width: 60px;
+			height: 60px;
+			border: 2px solid #D9D9D9;
+			cursor: pointer;
+		}
+		.chat-title .chat-logo img:hover{
+			border: 2px solid #ccc;
+		}
+		/*info*/
+		.chat .chat-info{
+			float: left;
+			width:57%;
+		}
+		.chat .chat-info .chat-name{
+			padding: 3px;
+			font-size:14px;
+			font-weight: bold;
+			color: #000;
+		}
+		.chat .chat-info .chat-desc{
+			padding: 3px;
+			font-size:12px;
+			color: #000;
+			border:none;	
+			border:1px solid rgba(0,0,0,0);
+		}
+		.chat .chat-info .chat-desc:hover{
+			border: 1px solid #ccc;
+		}
+		
+		/*search*/
+		.chat-search{
+			width: 100%;
+			height: 25px;
+			padding:0 1px;
+		}
+		.chat-search input{
+			width: 98.8%;
+			height: 21px;
+			border:1px solid rgba(0,0,0,.10);
+			background: rgba(0,0,0,.02);
+			font-size: 14px;
+			padding:0 5px;
+		}
+
+		/*main*/
+		.chat-main{
+			height: 410px;
+			background: #F0F3F6;
+			opacity: 0.85;
+		}
+		/*header*/
+		.chat-main .chat-main-header{
+			border-bottom: 3px solid #CCCFD3;
+			height: 30px;
+		}
+		.chat-main .chat-main-header-item{
+			width:32%;
+			height: 31px;
+			float: left;
+			text-align: center;
+			cursor: pointer;
+		}
+		.chat-main .chat-main-header .current{
+			border-bottom:1.5px solid #566A81; 
+		}
+		.chat-main .chat-main-header .current img{
+			fill: #566A81;
+		}
+		.chat-main .chat-main-header img{
+			color:#ccc;
+			width: 20px;
+			height: 20px;
+			float: left;
+			padding: 5px 35px;
+			cursor: pointer;
+		}
+
+		/*list*/
+		.chat-main .chat-main-list{
+			overflow-y:scroll;
+			overflow-x:hidden;
+			height: 390px;
+		}
+		.chat-main .chat-main-list ul{
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			padding-top: 5px;
+		}
+		.chat-main .chat-main-list ul li{
+			list-style: none;
+			width: 100%;
+			padding:5px 10px;
+			height: 40px;
+		}
+		.chat-main .chat-main-list ul li:hover{
+			/*background: #CCCED0;*/
+			background: rgba(204,206,208,0.5);
+		}
+
+		.chat-main .chat-main-list li img{
+			width: 35px;
+			height: 35px;
+			border-radius: 100%;
+			border:1px solid rgba(0,0,0,.2);
+			float: left;
+		}
+		.chat-main .chat-main-list-date{
+			font-size: 10px;
+			float: right;
+			margin-right: 12px;
+		}
+		.chat-main .chat-main-list-title{
+			font-size: 12px;
+			font-weight: bold;
+			float: left;
+			padding:0 10px;
+			width: 60%;
+			color: #000;
+		}
+		.chat-main .chat-main-list-content{
+			font-size: 10px;
+			float: right;
+			width: 81%;
+			padding:2px 0;
+		}
+
+		/*footer*/
+		.chat-footer{
+			height: 90px;
+			margin-top: 20px;
+			font-size: 12px;
+		}
+		.chat-footer .chat-footer-item{
+			width: 100px;
+			float: left;
+		}
+		
+		/*intro*/
+		.chat-intro{
+			width: 250px;
+			height: 100px;
+			border:1px solid rgba(0,0,0,.03);
+			background-image: url(http://im.bigzhl.com/static/common/layui/css/modules/layim/skin/2.jpg);
+			float: right;
+			position: relative;
+			top: 152px;
+			right: 260px;
+		}
+		.chat-intro .head-logo{
+			width: 100px;
+			float: left;
+		}
+		.chat-intro .head-logo img{
+			height: 100px;
+			width: 100px;
+			border-right:1px solid rgba(0,0,0,.05); 
+		}
+		.chat-intro .intro-main{
+			width: 130px;
+			height: 90px;
+			float: left;
+			padding: 5px 10px;
+		}
+		.chat-intro .intro-name{
+			font-weight: bold;
+		}		
+		.chat-intro .intro-desc{
+			font-size:12px;
+			margin: 0;
+			margin-top:5px;
+			color: rgba(0,0,0,.7);
+		}
+		.chat-intro .intro-ip{
+			font-size:12px;
+		}
+		.chat-intro .intro-address{
+			margin-top:5px;
+			font-size:12px;
+			color: rgba(0,0,0,.7);
+		}
+		
+		/*chat-main*/
+		.chat-main-box{
+			width: 600px;
+			height: 400px;
+			border:1px solid rgba(0,0,0,.03);
+			background-image: url(http://im.bigzhl.com/static/common/layui/css/modules/layim/skin/2.jpg);
+			position: relative;
+			top: 152px;
+			left: 250px;
+		}
+		.chat-main-box .main-content{
+			width: 600px;
+			height: 400px;
+			background: rgba(255,255,255,.8);
+		}
+
+		/*chat-mini*/
+		.chat-mini{
+			width: 150px;
+			height: 35px;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			background: #fff;
+			border:1px solid rgba(0,0,0,.2);
+			border-bottom: none;
+			border-right: none;
+			padding:5px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.chat-mini img{
+			border:1px solid rgba(0,0,0,.2);
+			cursor: pointer;
+			height: 35px;
+			border-radius: 50%;
+		}
+		.chat-mini .chat-mini-logo{
+			width: 35px;
+			height: 35px;
+			float: left;
+		}
+		.chat-mini .chat-mini-name{
+			width: 100px;
+			height: 35px;
+			float: left;
+			/*padding-left: */
+			line-height: 35px;
+			font-weight: bold;
+
+		}
+	</style>
+
+</head>
+<body>
+
+	<!-- chat-intro -->
+	<div class="chat-intro" style="display: none;">
+		<div class="head-logo"> <img src="http://q1.qlogo.cn/g?b=qq&nk=30024167&s=140&t=1368862220" alt=""> </div>
+		<div class="intro-main">
+			<span class="intro-name"> bool </span>
+			<p class="intro-desc">php是最好的语言</p>
+			<span class="intro-ip">127.0.0.1</span>
+			<div class="intro-address"> 江苏-苏州-吴中 </div>
+		</div>
+	</div>
+	
+
+	<!-- chat-main -->
+	<div class="chat-main-box">
+		<div class="main-content">123456</div>
+	</div>
+
+
+
+	<!-- chat -->
+	<div class="chat" id="chat-box" >
+		
+		<!-- chat-title -->
+		<div class="chat-title">
+			<!-- close -->
+			<div class="chat-close"> 
+				<img src="./img/close.svg"  class="chat-close-img" alt=""> 
+				<img src="./img/min.svg" alt=""> 
+				<img src="./img/skin.svg" alt=""> 
+			</div>
+
+			<!-- login -->
+			<div class="chat-logo">
+				<img src="http://q1.qlogo.cn/g?b=qq&nk=30024167&s=140&t=1368862220" alt="" >
+			</div>
+			<!-- info -->
+			<div class="chat-info">
+				<div class="chat-name">游客</div>
+				<div class="chat-desc">php是最好的编程语言</div>
+			</div>
+		</div>
+		
+		<!-- search -->
+		<div class="chat-search">
+			<input type="text" name="keywords" id="chat-keywords">
+		</div>
+		
+		<!-- main -->
+		<div class="chat-main">
+
+			<!-- header -->
+			<div class="chat-main-header">
+				<div class="chat-main-header-item current">
+					<img src="./img/chat.svg" alt="">
+				</div>
+				<div class="chat-main-header-item">
+					<img src="./img/contact.svg" alt="">
+				</div>
+				<div class="chat-main-header-item">
+					<img src="./img/group.svg" alt="">
+				</div>				
+			</div>
+
+			<!-- list -->
+			<div class="chat-main-list">
+				<ul>
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=30024167&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> 布尔 </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> 你好 </div>
+					</li>
+
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=81001985&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> console.log </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> 测试 </div>
+					</li>
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=498734244&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> 幸福的小海豚 </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> 小海豚 </div>
+					</li>
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=350510858&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> 守望明天 </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> php是最好的编程语言 </div>
+					</li>					
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=100890610&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> 广州-Ctrl+V </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> Ctrl+V </div>
+					</li>
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=78669365&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> Kinn </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> Kinn </div>
+					</li>					
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=398123186&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> she tell me must win </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> 在吗? </div>
+					</li>
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=913512417&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> Victor  big god </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> echo $name; </div>
+					</li>					
+					<li>
+						<img src="http://q1.qlogo.cn/g?b=qq&nk=834305587&s=140&t=1368862220" alt="">
+						<span class="chat-main-list-title"> 超懒不是超能力畅 </span>
+						<span class="chat-main-list-date"> 9-21 </span>
+						<div class="chat-main-list-content"> 干嘛呢? </div>
+					</li>
+
+				</ul>				
+			</div>
+
+		</div>
+		
+		<!-- footer -->
+		<div class="chat-footer">
+			<div class="chat-footer-item">设置</div>
+			<div class="chat-footer-item">+</div>
+		</div>
+	</div>
+
+
+	<!-- chat-mini -->
+	<div class="chat-mini" style="display: none;">
+		<div class="chat-mini-logo">
+			<img src="http://q1.qlogo.cn/g?b=qq&nk=30024167&s=140&t=1368862220" alt="">
+		</div>
+		<div class="chat-mini-name">bool</div>
+	</div>
+
+</body>
+</html>
