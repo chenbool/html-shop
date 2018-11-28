@@ -1,0 +1,348 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  color: #666666;
+  font-size: 14px;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5tahoma, arial;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666666;
+}
+a:hover {
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.vs-nav-toolbar {
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid #eeeeee;
+  background: #f5f5f5;
+}
+.vs-nav-toolbar .vs-nav-toolbar-list > li:hover {
+  background: #fff;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+.vs-nav-toolbar .vs-nav-toolbar-list > li {
+  float: left;
+  cursor: pointer;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+  text-align: center;
+  width: 75px;
+}
+.vs-nav-toolbar .vs-nav-toolbar-list > li > span {
+  padding: 3px;
+  font-size: 12px;
+  display: block;
+  line-height: 36px;
+  height: 36px;
+}
+.vs-nav-toolbar .vs-nav-toolbar-list > li > span > i {
+  padding: 2px;
+}
+.vs-nav-toolbar .vs-nav-toolbar-list > li > span > .fa-map-marker,
+.vs-nav-toolbar .vs-nav-toolbar-list > li > span > .fa-opencart {
+  color: #ff9900;
+  padding-left: 5px;
+}
+.vs-nav-toolbar .vs-nav-toolbar-hide {
+  display: none;
+  position: absolute;
+  border: 1px solid #eeeeee;
+  border-top: none;
+  padding: 3px 3px 5px 3px;
+  text-align: center;
+  width: auto;
+  z-index: 1000;
+  background: #fff;
+}
+.vs-nav-toolbar .vs-nav-toolbar-hide li {
+  height: 25px;
+  line-height: 25px;
+}
+.vs-nav-toolbar .vs-nav-toolbar-hide > ul > li {
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  padding: 3px 5px 5px 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.vs-nav-toolbar .vs-nav-toolbar-hide li > b {
+  font-size: 12px;
+}
+.vs-nav-toolbar .vs-nav-toolbar-hide li > a:hover,
+.vs-nav-toolbar .vs-nav-toolbar-hide li > span:hover {
+  color: #ff9900;
+}
+.vs-nav-toolbar .vs-nav-toolbar-hide span {
+  font-size: 12px;
+}
+.vs-logo-box {
+  z-index: 998;
+  height: 85px;
+  line-height: 85px;
+  /*position:absolute;*/
+}
+.vs-logo-box .vs-logo-box-search {
+  height: 50px;
+  line-height: 50px;
+  margin-top: 15px;
+}
+.vs-logo-box .vs-logo-box-search input[type="text"] {
+  border: 2px solid #ff9900;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+}
+.vs-logo-box .vs-logo-box-search .search-btn {
+  background: #ff9900;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  margin-left: -4px;
+  color: #fff;
+  /*font-weight: bold;*/
+}
+.vs-logo-box .vs-logo-box-search-lable {
+  height: 30px;
+  line-height: 30px;
+}
+.vs-logo-box .vs-logo-box-search-lable a {
+  float: left;
+  padding: 2px 5px;
+}
+.vs-logo-box .vs-logo-box-search-lable a:hover {
+  color: #ff9900;
+}
+.vs-cate {
+  margin-top: 25px;
+  font-weight: bold;
+}
+.vs-cate .vs-cate-title {
+  background: #ff9900;
+  width: 180px;
+  padding: 5px;
+  color: #fff;
+  /*text-align: center;*/
+  padding: 8px 15px;
+  cursor: pointer;
+}
+.vs-cate .vs-cate-title .fa-navicon {
+  padding-right: 5px;
+}
+.vs-cate .vs-cate-list > li {
+  float: left;
+  width: 100px;
+  height: 37px;
+  line-height: 40px;
+  text-align: center;
+  /*background: #000;*/
+}
+.vs-cate .vs-cate-list > li > a {
+  padding: 7px 25px;
+  color: #333333;
+}
+.vs-cate .vs-cate-list > li > a:hover {
+  color: #ff9900;
+  border-bottom: 2px solid #ff9900;
+}
+.vs-cate .vs-cate-list .vs-cate-icon-hot {
+  background: url('../img/hot.png');
+  background-repeat: no-repeat;
+  /*background-position: top right;*/
+  background-position: 60px 0;
+  -webkit-background-size: 16px 16px;
+  background-size: 16px 16px;
+}
+.vs-cate .vs-cate-list .vs-cate-icon-new {
+  /*&:extend(.vs-cate-icon-hot);*/
+  background: url('../img/new.png');
+  background-repeat: no-repeat;
+  background-position: 60px 0;
+  -webkit-background-size: 16px 16px;
+  background-size: 16px 16px;
+}
+.vs-cate-main {
+  background: url('../img/banner.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 480px;
+}
+.vs-cate-main .vs-cate-menu {
+  /*background: #252221;*/
+  background: rgba(37, 34, 33, 0.9);
+  width: 180px;
+  height: 480px;
+  color: #fff;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+.vs-cate-main .vs-cate-menu > ul > li {
+  padding: 5px;
+  cursor: pointer;
+}
+.vs-cate-main .vs-cate-menu > ul > li > a {
+  color: #fff;
+  font-size: 12px;
+  padding: 0 5px;
+}
+.vs-cate-main .vs-cate-menu > ul > li > a:hover {
+  color: #ff9900;
+}
+.vs-cate-main .vs-cate-menu > ul > li > a:first-child {
+  border-right: 1px solid #666666;
+}
+.vs-cate-main .vs-cate-menu > ul > li > a:last-child {
+  border-left: 1px solid #666666;
+}
+.vs-cate-main .vs-cate-menu > ul > li:hover {
+  background: #fff;
+  /*background: rgba(255,255,255,0.9);*/
+  color: #ff9900;
+}
+.vs-cate-main .vs-cate-menu > ul > li:hover > a {
+  color: #ff9900;
+}
+.vs-cate-main .vs-cate-menu > ul > li:hover > a:first-child {
+  border-right: 1px solid #eee;
+}
+.vs-cate-main .vs-cate-menu > ul > li:hover > a:last-child {
+  border-left: 1px solid #eee;
+}
+.vs-cate-main .vs-cate-menu-main {
+  /*display: none;*/
+  /*background: #fff;*/
+  background: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  padding: 10px;
+  /*小菜单*/
+}
+.vs-cate-main .vs-cate-menu-main .vs-cate-menu-main-title {
+  /* border: 1px solid #ccc; */
+  min-height: 35px;
+}
+.vs-cate-main .vs-cate-menu-main .vs-cate-menu-main-title > li {
+  float: left;
+  background: #ff9900;
+  padding: 3px 8px;
+  margin: 0 6px;
+  text-align: center;
+  cursor: pointer;
+}
+.vs-cate-main .vs-cate-menu-main .vs-cate-menu-main-title > li > a {
+  color: #fff;
+  font-size: 12px;
+}
+.vs-cate-main .vs-cate-menu-main .vs-cate-menu-main-lists {
+  padding: 2px 5px;
+}
+.vs-cate-main .vs-cate-menu-main .vs-cate-menu-main-lists > li {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+}
+.vs-cate-main .vs-cate-menu-main .vs-cate-menu-main-lists > li > b {
+  font-size: 12px;
+  color: #333333;
+  font-weight: bold;
+}
+.vs-cate-main .vs-cate-menu-main-brand {
+  /*border: 1px solid #ccc;*/
+  background: rgba(243, 243, 243, 0.9);
+  /*width: 210px;*/
+  padding: 2px auto;
+}
+.vs-cate-main .vs-cate-menu-main-brand > li {
+  float: left;
+  margin: 2px;
+  text-align: center;
+  cursor: pointer;
+}
+.vs-cate-main .vs-cate-menu-main-brand > li > a > img {
+  width: 100px;
+  height: 40px;
+  border: 1px solid rgba(243, 243, 243, 0.9);
+}
+.vs-cate-main .vs-cate-menu-main-brand > li > a > img:hover {
+  border: 1px solid #ff9900;
+}
+.vs-cate-main .vs-cate-menu-main-adv {
+  /*text-align: center;*/
+  cursor: pointer;
+}
+.vs-cate-main .vs-cate-menu-main-adv > img {
+  margin: 3px;
+  width: 200px;
+  height: 110px;
+  border: 1px solid rgba(243, 243, 243, 0.9);
+}
+.vs-cate-main .vs-cate-menu-main-adv > img:hover {
+  border: 1px solid #ff9900;
+}
+.banner-box {
+  position: relative;
+  top: -300px;
+}
+/*轮播*/
+.banner {
+  position: relative;
+  overflow: auto;
+  z-index: 998;
+}
+.banner li {
+  list-style: none;
+}
+.banner ul li {
+  float: left;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="H5UI">
+    <meta name="description" content="H5UI-">
+
+    <title>Navbar</title>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <!-- H5UI CSS -->
+    <link rel="stylesheet" href="./css/h5ui.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <style>
+        .banner { position: relative; overflow: auto; }
+        .banner li { list-style: none; }
+        .banner ul li { float: left; }
+    </style>
+</head>
+
+<body ontouchstart>
+
+<!-- start [top-bar] -->
+<header class="h5ui-bar bar-red bar-fixed">
+
+    <a class="h5ui-bar_item pull-left nopd" href="" >
+        <i class="header-icon-back"></i>
+    </a>
+
+    <div class="h5ui-bar_item pull-left" style="padding: 0;line-height: 45px;">
+        <div class="searchbar-content" >
+            <input type="search" class="h5ui-form-input" placeholder="搜一下">
+        </div>
+    </div>
+
+    <a class="h5ui-bar_item pull-right" href="">
+        登陆
+    </a>
+</header>
+<!-- end [top-bar] -->
+
+
+
+<div style="height: 700px;">
+
+    <div class="banner">
+        <ul>
+            <li style="background-image: url('http://www.bootcss.com/p/unslider/img/sunset.jpg');" >
+                <div class="inner">
+                    <h1>The jQuery slider that just slides.</h1>
+                    <p>就是这个不到3kb的插件！没有奇特的特效或无用的标签。</p>
+
+                    <a class="btn" href="#download">下载</a>
+                </div>
+            </li>
+
+            <li style="background-image: url('http://www.bootcss.com/p/unslider/img/wood.jpg');" >
+                <div class="inner">
+                    <h1>Fluid, flexible, fantastically minimal.</h1>
+                    <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+                    <a class="btn" href="#download">下载</a>
+                </div>
+            </li>
+
+            <li style="background-image: url('http://www.bootcss.com/p/unslider/img/subway.jpg'); " >
+                <div class="inner">
+                    <h1>开源</h1>
+                    <p>Unslider的所有源码都托管在GitHub上。</p>
+
+                    <a class="btn" href="http://github.com/idiot/unslider">参与</a>
+                </div>
+            </li>
+
+            <li style="background-image: url('http://www.bootcss.com/p/unslider/img/shop.jpg');" >
+                <div class="inner">
+                    <h1>Uh, that’s about it.</h1>
+                    <p>I just wanted to show you another slide.</p>
+
+                    <a class="btn" href="#download">下载</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- start [bar-tab] -->
+<footer class="h5ui-bar bar-fixed">
+    <a href="" class="h5ui-bar_item active">
+        <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark-green.png" width="100%"></i>
+        <span>首页</span>
+    </a>
+    <a href="" class="h5ui-bar_item">
+        <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"><span class="h5ui-badge h5ui-badge_dot"></span></i>
+        <span>动态</span>
+    </a>
+    <a href="" class="h5ui-bar_item">
+        <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"></i>
+        <span>发起</span>
+    </a>
+    <a href="" class="h5ui-bar_item">
+        <i class="h5ui-bar_icon"><img src="https://s.h5ui.io/img/mark.png" width="100%"><span class="h5ui-badge">8</span></i>
+        <span>用户</span>
+    </a>
+</footer>
+<!-- end [bar-tab] -->
+
+
+<!-- Copyright -->
+<div class="example-copyright fixed" style="bottom: 50px;">
+    <a href="../index.html" class="flag"></a>
+</div>
+
+
+</body>
+</html>
+<!-- <script src="./js/jquery.min.js"></script> -->
+<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+
+<!-- <script src="./js/stickUp.min.js"></script> -->
+
+<link rel="stylesheet" href="http://www.bootcss.com/p/unslider/style.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://www.bootcss.com/p/unslider/unslider.min.js"></script>
+
+<script>
+
+    // $('#header').stickUp();
+
+    $('.banner').unslider({
+        speed: 500,              
+        delay: 3000,             
+        complete: function() {},  
+        keys: true,              
+        fluid: true,
+        dots: true
+    });
+
+
+</script>
